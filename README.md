@@ -8,7 +8,6 @@ Descrption
 Faith Chang - User Experience Designer  
 Eldaah Zelalem - Documentation Manager
 Atena Nikbakht – Project Coordinator
-
 Selamawit Asmare - Researcher
 
 

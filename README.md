@@ -3,7 +3,7 @@
 #We are building an archive management system meant for cataloging, searching, and managing digital collections specific to art. We will integrate metadata standards and an object-oriented system in order to apply the program to multiple different archive formats. 
 
 # Team members and roles:
-Faith Chang - User Experience Designer  
+Faith Chang - User Experience Designer
 Eldaah Zelalem - Documentation Manager
 Atena Nikbakht – Project Coordinator
 Selamawit Asmare - Researcher

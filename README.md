@@ -20,5 +20,7 @@ It can be complicated to keep track of art and the different artists, including 
 
 # Function library overview and organization
 
-# Contribution guidelines for team members
+# Team Member Contributions
+
+**Atena Nikbakht** - Search by metadata function
 

@@ -23,4 +23,5 @@ It can be complicated to keep track of art and the different artists, including 
 # Team Member Contributions
 
 **Atena Nikbakht** - Search by metadata function
+**Eldaah Zelalem** - 
 

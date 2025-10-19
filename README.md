@@ -23,6 +23,16 @@ It can be complicated to keep track of art and the different artists, including 
 # Usage examples for key functions
 
 # Function library overview and organization
+Our function library is organized by complexity level and team member contributions to make it easy to read and test. 
+
+Each team member contributed 3–5 functions showing their understanding of:
+Function definition and syntax
+User input handling
+Conditional logic and validation
+Data storage using dictionaries
+
+Together, these functions make up the Digital Art Archive Management System, which will later evolve into a more advanced, object-oriented program capable of managing and searching large collections of digital artworks.
+
 
 # Team Member Contributions
 

@@ -21,13 +21,12 @@ It can be complicated to keep track of art and the different artists, including 
 4. In Google Colab, click the Play button beside each cell to run it.
 
 # Usage examples for key functions
-1. clean_titles()
-   This function prompts the user to input an artwork title and removes any special characters or extra spaces
-   sanitized_title = clean_title
+1. def artwork_type(art_type: str):
+  This function will organize artworks into their respective categories. Like if it is a painting or a sculpture.
 2. search_art_by_artist()
    This function prompts the user to enter an artist's name and prints their artwork if any is found
-3. validate_dimesnions()
-      This function prompts the user to enter an artwork's height, length, and width to search for art and ensure each dimension is a positive number 
+3. def standardize_artist_name(name:str)
+ This function will standardize the given artist name so we can compare all names and store them. It will be in a "Last Name, First Name" format. This function will remove whitespace and fix capitalization
 
 # Function library overview and organization
 Our function library is organized by complexity level and team member contributions to make it easy to read and test. 

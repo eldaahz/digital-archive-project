@@ -26,7 +26,7 @@ It can be complicated to keep track of art and the different artists, including 
    sanitized_title = clean_title
 2. search_art_by_artist()
    This function prompts the user to enter an artist's name and prints their artwork if any is found
-   3. validate_dimesnions()
+3. validate_dimesnions()
       This function prompts the user to enter an artwork's height, length, and width to search for art and ensure each dimension is a positive number 
 
 # Function library overview and organization

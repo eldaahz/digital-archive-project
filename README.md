@@ -15,6 +15,10 @@
 It can be complicated to keep track of art and the different artists, including their creation dates, types of art, etc. Creating an archive management system to organize, manage, and search this information can make art collections easier to store. Organizations such as Universities can benefit from this system. 
 
 # Installation and Setup
+1. Open Google Colab or VS Code.
+2. Copy and paste the function code from our GitHub repository into a new Python file.
+3. Save and run the file to test each function.
+4. In Google Colab, click the Play button beside each cell to run it.
 
 # Usage examples for key functions
 

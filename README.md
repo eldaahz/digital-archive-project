@@ -27,6 +27,8 @@ It can be complicated to keep track of art and the different artists, including 
    This function prompts the user to enter an artist's name and prints their artwork if any is found
 3. def standardize_artist_name(name:str)
  This function will standardize the given artist name so we can compare all names and store them. It will be in a "Last Name, First Name" format. This function will remove whitespace and fix capitalization
+4. validate_image_resolution(file_path: str, min_width: int, min_height: int)
+   This function ensures that the images added into the system fit the resolution requierments for the best quality.  
 
 # Function library overview and organization
 Our function library is organized by complexity level and team member contributions to make it easy to read and test. 

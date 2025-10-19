@@ -44,4 +44,5 @@ Together, these functions make up the Digital Art Archive Management System, whi
 
 **Atena Nikbakht** - Search by metadata function
 **Eldaah Zelalem** - 
+**Faith Chang** - Artwork type storage and Validation
 **Selamawit Asmare** - Data Validation and record management functions

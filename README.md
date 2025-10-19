@@ -28,7 +28,9 @@ It can be complicated to keep track of art and the different artists, including 
 3. def standardize_artist_name(name:str)
  This function will standardize the given artist name so we can compare all names and store them. It will be in a "Last Name, First Name" format. This function will remove whitespace and fix capitalization
 4. validate_image_resolution(file_path: str, min_width: int, min_height: int)
-   This function ensures that the images added into the system fit the resolution requierments for the best quality.  
+   This function ensures that the images added to the system fit the resolution requirements for the best quality.
+5. search_art_by_metadata
+   This function allows the user to search through the system using different metadata, such as the artist, artwork title, or year created. The return value is the number of matches found with the keywords given.
 
 # Function library overview and organization
 Our function library is organized by complexity level and team member contributions to make it easy to read and test. 

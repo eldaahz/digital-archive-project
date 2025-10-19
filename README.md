@@ -24,4 +24,4 @@ It can be complicated to keep track of art and the different artists, including 
 
 **Atena Nikbakht** - Search by metadata function
 **Eldaah Zelalem** - 
-
+**Selamawit Asmare** - Data Validation and record management functions

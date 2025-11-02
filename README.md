@@ -95,7 +95,7 @@ Represents an artwork record in the digital archive collection that focuses on m
 - 'to_dict() -> Converts dictionary format that is compatible from Project 1 functions
 - 'get_age()' -> Calculates how old the artwork is in years
 
-**ArchiveRecord – Selamawit Asmare**
+**Artwork Record Manager – Selamawit Asmare**
 
 *Purpose:*
 Validates and manages artwork records in the Digital Art Archive. It checks input data, creates unique IDs, and keeps records consistent.

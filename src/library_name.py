@@ -5,7 +5,7 @@ class ArtworkRecordManager:
     Represents a manager for validating, creating, and organizing artwork records
     in the digital art archive system.
 
-    Integrates Project 1 functions:
+    Integrates functions:
     - generate_artwork_id()
     - parse_creation_year()
     - validate_artwork_record()
@@ -103,3 +103,4 @@ if __name__ == "__main__":
     print(artwork)
     print("Dictionary:", artwork.to_dict())
     print("Artwork age:", artwork.get_age(), "years")
+

@@ -53,19 +53,19 @@ Together, these functions make up the Digital Art Archive Management System, whi
 
 # Classes
 
-**Artwork - Faith Chang**
-Represents an individual artwork in the digital archive collection.
+**Artwork Record - Faith Chang**
+Represents an artwork record in the digital archive collection that focuses on metadata, searching, and time analysis.
 
 *Features*
 - Validates artwork data (title, artist, year (1000-2025), type)
 - Integrates functions from Project 1
-- Searches artwork by the artist, title, year, or different keywords
-- Checks if artwork is from a specific time period
+- Analyzes time properties such as age and time periods
+- Exports dictionary format for data processing
 
 *Properties*
-- 'title', 'artist', 'year', 
+- 'title', 'artist', 'year', 'art_type' 
 
 *Methods*
 - 'is_from_period()' -> Checks if artowrk is created within the date range
-- 'matches_search() -> Searches by various field
-- 'add_keyword()' -> Adds metadata keywords
+- 'to_dict() -> Converts dictionary format that is compatible from Project 1 functions
+- 'get_age()' -> Calculates how old the artwork is in years

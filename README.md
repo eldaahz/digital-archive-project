@@ -94,3 +94,20 @@ Represents an artwork record in the digital archive collection that focuses on m
 - 'is_from_period()' -> Checks if artowrk is created within the date range
 - 'to_dict() -> Converts dictionary format that is compatible from Project 1 functions
 - 'get_age()' -> Calculates how old the artwork is in years
+
+Class: ArchiveRecord – Selamawit Asmare
+
+Purpose:
+Validates and manages artwork records in the Digital Art Archive. It checks input data, creates unique IDs, and keeps records consistent.
+
+Uses private attributes (_title, _artist, _year, _art_type, _artwork_id) with read-only properties to protect data.
+
+Project 1 Integration:
+_parse_creation_year() checks valid year range (1000–2025).
+_generate_artwork_id() creates short unique IDs.
+to_dict() reformats data for earlier validation functions.
+
+Key Methods:
+_validate_text(), _validate_art_type(), _generate_artwork_id(), get_age(), and to_dict().
+
+Design Note: Supports accurate data entry and future inheritance.

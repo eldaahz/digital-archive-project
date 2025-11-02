@@ -111,3 +111,20 @@ to_dict() reformats data for earlier validation functions.
 _validate_text(), _validate_art_type(), _generate_artwork_id(), get_age(), and to_dict().
 
 *Design Note:* Supports accurate data entry and future inheritance.
+
+** Artwork - Atena Nikbakht**
+This class represents a single artwork within the system and records metadata such as the artist, title, year, type, and image.
+
+*Features*
+- Initializes a new artwork object and validates/standardizes all inputs (artist, title, year, type, image).
+- Cleans up artist name and puts it in Last Name, First Name, format
+- Checks that given artwork type falls into an accepted category
+- Verifies that artwork meets width and height criteria
+
+Properties: artist, title, year, art_type, image_path
+
+Methods:
+- Constructor (__init__)
+- 5 property accessors
+- 3 internal validation methods
+- 2 string methods

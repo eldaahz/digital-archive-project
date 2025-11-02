@@ -37,3 +37,6 @@ Represents an individual artwork in the collection that stores key metadata such
 - _validate_year(year) – Ensures the year is an integer within the valid range.
 - validate_image_resolution(min_width, min_height) – Checks that the image file meets minimum resolution requirements.
 - __str__() / __repr__() – Provide readable and formal text representations of the artwork for printing and debugging.
+
+### class - ArtExhibiton - Eldaah Z.
+

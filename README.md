@@ -50,3 +50,21 @@ Together, these functions make up the Digital Art Archive Management System, whi
 **Eldaah Zelalem** - 
 **Faith Chang** - Artwork type storage and Validation
 **Selamawit Asmare** - Data Validation and record management functions
+
+#Classes
+**Artwork - Faith Chang**
+Represents an individual artowkr in teh digital archive collection.
+
+*Features*
+- Validates artwork data (title, artist, year (1000-2025), type)
+- Integrates functions from Project 1
+- Searches artwork by the artist, title, year, or different keywords
+- Checks if artwork is from a specific time period
+
+*Properties*
+- 'title', 'artist', 'year', 
+
+*Methods*
+- 'is_from_period()' -> Checks if artowrk is created within the date range
+- 'matches_search() -> Searches by various field
+- 'add_keyword()' -> Adds metadata keywords

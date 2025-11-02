@@ -15,24 +15,49 @@
 It can be complicated to keep track of art and the different artists, including their creation dates, types of art, etc. Creating an archive management system to organize, manage, and search this information can make art collections easier to store. Organizations such as Universities can benefit from this system. 
 
 # Installation and Setup
+1. Clone this repository:
+```bash
+   git clone https://github.com/eldaahz/digital-archive-project.git
+   cd art-archive-system
+```
+2. No external dependencies required - uses Python standard library only
+
+3. Import functions in your Python code:
+```python from src.archive_library import search_art_by_metadata, validate_dimensions
+``` 
+
+# Installation and Setup
 1. Open Google Colab or VS Code.
 2. Copy and paste the function code from our GitHub repository into a new Python file.
 3. Save and run the file to test each function.
 4. In Google Colab, click the Play button beside each cell to run it.
 
 # Usage examples for key functions
-1. def artwork_type(art_type: str):
-  This function will organize artworks into their respective categories. Like if it is a painting or a sculpture.
-2. search_art_by_artist()
-   This function prompts the user to enter an artist's name and prints their artwork if any is found
-3. def standardize_artist_name(name:str)
- This function will standardize the given artist name so we can compare all names and store them. It will be in a "Last Name, First Name" format. This function will remove whitespace and fix capitalization
-4. validate_image_resolution(file_path: str, min_width: int, min_height: int)
-   This function ensures that the images added to the system fit the resolution requirements for the best quality.
-5. search_art_by_metadata
-   This function allows the user to search through the system using different metadata, such as the artist, artwork title, or year created. The return value is the number of matches found with the keywords given.
+###Cataloging artwork
+'''python
+from src.archive_library import validate_dimension, ststandardize_artist_name
+dimensions = validate_dimensions()
+clean_name = standarized_artist_name("van gogh, vincent")
+
+### Searching archive
+'''python
+from src.archive_library import search_art_by_metadata
+artworks = [
+    {"title": "Starry Night", "artist": "Vincent van Gogh", "year": 1889, "type": "Painting", "keywords": ["post-impressionism", "night", "stars"]},
+    {"title": "Water Lilies", "artist": "Claude Monet", "year": 1899, "type": "Painting", "keywords": ["impressionism", "light", "French"]}
+]
+results = search_art_by_metadata(artworks, "Monet", "artist")
+'''
+
+### Data validation
+'''python
+from src.archive_library import parse_creation_year, validate_artwork_record
+year = parse_creation_year()
+record = validate_artwork_record()
+'''
 
 # Function library overview and organization
+
 Our function library is organized by complexity level and team member contributions to make it easy to read and test. 
 
 Each team member contributed 3–5 functions showing their understanding of:

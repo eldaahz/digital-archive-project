@@ -103,7 +103,7 @@ Validates and manages artwork records in the Digital Art Archive. It checks inpu
 Uses private attributes (_title, _artist, _year, _art_type, _artwork_id) with read-only properties to protect data.
 
 *Integration:*
-_parse_creation_year() checks valid year range (1000–2025).
+_parse_creation_year() checks valid year range.
 _generate_artwork_id() creates short unique IDs.
 to_dict() reformats data for earlier validation functions.
 

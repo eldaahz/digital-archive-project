@@ -1,4 +1,4 @@
-#Faith - Class 1
+#Faith - Class 
 class Artwork:
   """Represents an artwork in the digital archive collection"""
   VALID_TYPES = ["Painting", "Sculpture", "Photograph", "Digital Art", "Drawing", "Mixed Media"]
@@ -95,3 +95,4 @@ print(artwork_1)
 print(f"Is artwork from 1880-1990? {artwork_1.is_from_period(1880, 1990)}")
 print(f"Dictionary format: {artwork_1.to_dict()}")
 print(f"Artwork age: {artwork_1.get_age()} years old")
+

@@ -51,9 +51,9 @@ Together, these functions make up the Digital Art Archive Management System, whi
 **Faith Chang** - Artwork type storage and Validation
 **Selamawit Asmare** - Data Validation and record management functions
 
-#Classes
+# Classes
 **Artwork - Faith Chang**
-Represents an individual artowkr in teh digital archive collection.
+Represents an individual artwork in the digital archive collection.
 
 *Features*
 - Validates artwork data (title, artist, year (1000-2025), type)

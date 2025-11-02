@@ -29,3 +29,20 @@
 
 **Read-only Properties:** Title, year, art_type, and image_path are read-only after intiialization
 to maintain record consistency and maintain integrity.
+
+## Artwork Collection Class - Eldaah Z
+**Purpose**: This represents managing and analyzing multiple artworks instead of individual metadata. This class integrate Project 1 functions.
+
+**Key Design Decisions**: 
+1.) **Encapsulation** I used private attributes like _collection_name and _artworks to prevent direct modification from the outside class and force users to use controlled methods like .add_work() or .remove_artwork()
+2.) **Project 1 Integration**: 
+- validate_dimenstions() - ask user for heigh, length, & width while ensuring positive numbers are entered
+- clean_titles() - remove special characters and extra whitespace from artwork titles
+- search_art_by_artist() - ask for artist input and displays work from the artist
+
+**Read-only Properties:**  name, _artworks, total_value, created_at. I made these read-only to ensure that only derived values were taken and so users don't directly change the internal list and used the controlled methods and a timestamp to track artwork creation. 
+
+
+
+
+

@@ -38,5 +38,17 @@ Represents an individual artwork in the collection that stores key metadata such
 - validate_image_resolution(min_width, min_height) – Checks that the image file meets minimum resolution requirements.
 - __str__() / __repr__() – Provide readable and formal text representations of the artwork for printing and debugging.
 
-### class - ArtExhibiton - Eldaah Z.
+### Class - ArtCollection - Eldaah Z.
+This represents managing and analyzing multiple artworks instead of individual metadata. This class integrate Project 1 functions. 
+
+## Main Attributes
+- _artworks = [] : list of available artworks 
+
+## Key Methods: 
+- __init__() : initializes an empty collection of artworks
+- add_artwork(artwork) : adds and artwork object to the collection (by title + artist)
+- search_by_artisit(artist_name) : searches the collection for artworks by specific artwork
+- filter_by_dimensions(min_height=0, min_length=0, min_width=0) : returns artwork that meet or exceed the specified dimensions
+- list_titles() : returns a list of all artwork titles in the collection
+
 

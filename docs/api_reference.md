@@ -19,3 +19,21 @@ Represents an artwork record in the digital archive collection with focus on met
 - **to_dict()** – Turns the artwork info into a dictionary  
 - **get_age()** – Finds how old the artwork is  
 - **__str__() / __repr__()** – Returns readable text versions of the artwork
+
+## Class: Artwork - Atena Nikbakht
+Represents an individual artwork in the collection that stores key metadata such as the artist, title, year, type, and image. Class integrates Project 1 functions to ensure validation, standardization, and image quality.
+
+### Main Attributes
+- _artist (str): Name of the artist, standardized for consistency.
+- _title (str): Title of the artwork.
+- _year (int): Year the artwork was created (validated between 0–2025).
+- _type (str): Artwork type (e.g., Painting, Photograph, Sculpture, Drawing).
+- _image_path (str): File path to the artwork image for validation and display.
+
+### Key Methods:
+- __init__() – Initializes an artwork object, validating all inputs upon creation.
+- _standardize_artist_name(name) – Formats artist names consistently (e.g., “Doe, John” → “John Doe”).
+- artwork_type(art_type) – Validates the artwork type against accepted categories.
+- _validate_year(year) – Ensures the year is an integer within the valid range.
+- validate_image_resolution(min_width, min_height) – Checks that the image file meets minimum resolution requirements.
+- __str__() / __repr__() – Provide readable and formal text representations of the artwork for printing and debugging.

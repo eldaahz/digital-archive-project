@@ -52,6 +52,7 @@ Together, these functions make up the Digital Art Archive Management System, whi
 **Selamawit Asmare** - Data Validation and record management functions
 
 # Classes
+
 **Artwork - Faith Chang**
 Represents an individual artwork in the digital archive collection.
 

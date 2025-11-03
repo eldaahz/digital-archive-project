@@ -40,7 +40,19 @@ to maintain record consistency and maintain integrity.
 - clean_titles() - remove special characters and extra whitespace from artwork titles
 - search_art_by_artist() - ask for artist input and displays work from the artist
 
-**Read-only Properties:**  name, _artworks, total_value, created_at. I made these read-only to ensure that only derived values were taken and so users don't directly change the internal list and used the controlled methods and a timestamp to track artwork creation. 
+## ArtworkRecordManager Class – Selamawit Asmare 
+
+**Purpose:** 
+Validates and manages artwork records in the Digital Art Archive.
+It ensures each entry has valid metadata and a unique ID for accurate storage.
+
+*Key Design:*
+1. Compile: Used private attributes (_title, _artist, _year, _art_type, _artwork_id) with @property decorators to protect data integrity.
+2. Project 1 Integration:
+       _parse_creation_year() adapts parse_creation_year() to validate year range.
+       _generate_artwork_id() integrates generate_artwork_id() for auto ID creation.
+       to_dict() builds on validate_artwork_record() for formatted record output.
+3. Read-only Properties: Title, artist, year, and type are read-only after initialization to maintain accuracy.
 
 
 

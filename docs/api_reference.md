@@ -64,7 +64,7 @@ It manages record creation, input validation, and automatic ID generation to ens
 - _artwork_id (str): Unique ID automatically generated from the title and artist
 
 **Class Variable** 
-VALID_TYPES (list): List of accepted artwork types
+- **VALID_TYPES** (list): List of accepted artwork types
 
 **Key Methods**
 - init() – Creates and validates a new artwork record
@@ -75,4 +75,5 @@ VALID_TYPES (list): List of accepted artwork types
 - get_age() – Calculates how old the artwork is in years
 - to_dict() – Converts the record into a dictionary format
 - str() / repr() – Returns readable versions of the record
+
 

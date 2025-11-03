@@ -51,4 +51,28 @@ This represents managing and analyzing multiple artworks instead of individual m
 - filter_by_dimensions(min_height=0, min_length=0, min_width=0) : returns artwork that meet or exceed the specified dimensions
 - list_titles() : returns a list of all artwork titles in the collection
 
+## ArtworkRecordManager – Selamawit Asmare
+
+Represents a validated artwork record within the Digital Art Archive system.
+It manages record creation, input validation, and automatic ID generation to ensure consistency across the archive.
+
+**Main Attributes**
+- _title (str): Title of the artwork
+- _artist (str): Artist name
+- _year (int): Year created (validated between 1000–2025)
+- _art_type (str): Type of artwork (e.g., Painting, Sculpture, Photograph)
+- _artwork_id (str): Unique ID automatically generated from the title and artist
+
+**Class Variable** 
+VALID_TYPES (list): List of accepted artwork types
+
+**Key Methods**
+- init() – Creates and validates a new artwork record
+- _validate_text() – Checks that text fields (title, artist) are not empty
+- _parse_creation_year() – Validates the creation year between 1000–2025
+- _validate_art_type() – Ensures the artwork type is allowed
+- _generate_artwork_id() – Creates a unique short ID for the artwork
+- get_age() – Calculates how old the artwork is in years
+- to_dict() – Converts the record into a dictionary format
+- str() / repr() – Returns readable versions of the record
 

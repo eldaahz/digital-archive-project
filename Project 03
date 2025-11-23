@@ -6,7 +6,7 @@
                /         |        |         \
         Painting     Sculpture   DigitalArt   Photograph
 
-2.) --  Abstract Base Classes & Polymorphism --
+2 & 3.) --  Abstract Base Classes & Polymorphism --
 from abc import ABC, abstractmethod
 
 # Abstract Base Class

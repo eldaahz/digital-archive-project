@@ -128,3 +128,37 @@ Methods:
 - 5 property accessors
 - 3 internal validation methods
 - 2 string methods
+- 
+
+
+# Project 3
+AbstractDocument Hierarchy:
+Purpose: To store and manage physical archives.
+
+AbstractDocument (ABC)
+│
+├── Manuscript
+│     └─ Attributes: pages
+│     └─ Methods: display_info(), preservation_instructions()
+│
+├── Newspaper
+│     └─ Attributes: issue_number
+│     └─ Methods: display_info(), preservation_instructions()
+│
+├── Letter
+│     └─ Attributes: recipient
+│     └─ Methods: display_info(), preservation_instructions()
+│
+└── Map
+      └─ Attributes: scale
+      └─ Methods: display_info(), preservation_instructions()
+
+Composition:
+ArchiveCollection
+└─ Contains: multiple AbstractDocument objects
+   └─ Methods: add_document(), display_all(), preservation_guide()
+
+## Key features:
+display_info() → Abstract method; shows a description of the document.
+
+preservation_instructions() → Abstract method; provides guidelines for preserving the document.

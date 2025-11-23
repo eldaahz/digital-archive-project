@@ -1,1 +1,75 @@
+#Eldaah Zelalem
+
+1.) -- Inheritance Hiearchy -- 
+                 AbstractArtItem (ABC)
+                /        |        |        \
+               /         |        |         \
+        Painting     Sculpture   DigitalArt   Photograph
+
+2.) --  Abstract Base Classes --
+from abc import ABC, abstractmethod
+
+class AbstractArtItem(ABC):
+    """Base class for all art items in the digital archive."""
+
+    def __init__(self, title, creator, year):
+        self.title = title
+        self.creator = creator
+        self.year = year
+
+    @abstractmethod
+    def preservation_requirements(self):
+        """Must be implemented by subclasses: returns guidelines for preserving this type of art."""
+        pass
+
+    @abstractmethod
+    def display_label(self):
+        """Must be implemented by subclasses: returns a formatted label for display."""
+        pass
+3.) -- Polymorphism --
+
+archive_items = [
+    Painting("Starry Night", "Vincent van Gogh", 1889, "oil"),
+    Sculpture("David", "Michelangelo", 1504, "marble"),
+    DigitalArt("Electric Dreams", "Ava Cole", 2020, "PNG"),
+    Photograph("New York Streets", "Helen Levitt", 1940, "black & white")
+]
+
+for item in archive_items:
+    # Base class reference, derived class behavior
+    print(item.display_label())                     
+    print("Preservation:", item.preservation_requirements())
+    print()
+
+4.) -- Composition w/ Demonstration -- 
+class Collection:
+    """A collection contains multiple art items (composition)."""
+    
+    def __init__(self, name):
+        self.name = name
+        self.items = []  # This list contains AbstractArtItem-derived objects
+
+    def add_item(self, art_item):
+        """Adds an art item to the collection."""
+        self.items.append(art_item)
+
+    def remove_item(self, art_item):
+        """Removes an art item from the collection."""
+        self.items.remove(art_item)
+
+    def show_all_labels(self):
+        """Displays labels for all items in the collection."""
+        for item in self.items:
+            print(item.display_label())
+
+# Demonstration 
+modern_collection = Collection("Modern Highlights")
+
+# Add various art items
+modern_collection.add_item(Painting("The Blue Room", "Picasso", 1901, "oil"))
+modern_collection.add_item(DigitalArt("Fractal Bloom", "Zara Liu", 2021, "MP4"))
+modern_collection.add_item(Photograph("Sunset City", "Alex Rivera", 2017, "color"))
+
+# Composition: collection holds multiple art items
+modern_collection.show_all_labels()
 

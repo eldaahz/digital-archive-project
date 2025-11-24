@@ -54,7 +54,13 @@ It ensures each entry has valid metadata and a unique ID for accurate storage.
        to_dict() builds on validate_artwork_record() for formatted record output.
 3. Read-only Properties: Title, artist, year, and type are read-only after initialization to maintain accuracy.
 
+## User Management System (Faith Chang)
 
+Inheritance: AbstractUser is the parent class with three types of users. Each user type "is a" user.
+
+Composition: UserRegistry "has" users inside it.
+
+Polymorphism: Same method gives different results - students get 3, researchers get 10, curators get 999.
 
 
 

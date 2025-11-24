@@ -162,3 +162,18 @@ ArchiveCollection
 display_info() → Abstract method; shows a description of the document.
 
 preservation_instructions() → Abstract method; provides guidelines for preserving the document.
+
+
+## Purpose: Manages users and how many artworks they can borrow.
+
+AbstractUser (ABC)
+- StudentUser: Can borrow 3 artworks, Basic Access
+- ResearcherUser: Can borrow 10 artworks, Premium Access  
+- CuratorUser: Can borrow 999 artworks, Gold Access
+
+Composition:
+UserRegistry holds multiple users
+
+Key features:
+calculate_borrowing_limit() - Each user type has different borrowing limits.
+get_access_level() - Each user type has different access levels.

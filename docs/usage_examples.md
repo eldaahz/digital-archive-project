@@ -7,5 +7,6 @@ Before running, make sure Python can find the `src` folder:
 import sys
 sys.path.append("src")
 
-1. Creating a Validated Artwork Record
+
+
 

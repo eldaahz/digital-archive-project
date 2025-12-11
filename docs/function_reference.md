@@ -1,4 +1,4 @@
-# Function & Class Reference
+# Function & Class Reference - Selma 
 This document explains the main classes used in the Digital Art Archive Management System and what each one does.
 
 
@@ -95,3 +95,4 @@ Manages all users in the system.
 - `get_users_by_type(type)` → filters users by type  
 
 This document is meant to help developers understand how each major class works.
+

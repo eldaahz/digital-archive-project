@@ -1,4 +1,4 @@
-# Usage Examples
+# Usage Examples - Selam
 
 These examples show how to use the main parts of the Digital Art Archive System.  
 Before running, make sure Python can find the `src` folder:
@@ -82,4 +82,5 @@ print("Borrow success?", student.borrow_artwork(art))
 
 for info in registry.display_all_users():
     print(info)
+
 

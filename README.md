@@ -177,3 +177,59 @@ UserRegistry holds multiple users
 Key features:
 calculate_borrowing_limit() - Each user type has different borrowing limits.
 get_access_level() - Each user type has different access levels.
+
+
+### OOP Concepts
+
+1. Encapsulation -- Our system protects the interval state of the programing by keeping attributes private and exposing only safe public methods.
+Example:
+class ArchiveItem:
+    def __init__(self, title, creator, year):
+        self._title = title          # private
+        self._creator = creator      # private
+        self._year = year            # private
+
+    @property
+    def title(self):
+        return self._title
+
+    @title.setter
+    def title(self, value):
+        if not value:
+            raise ValueError("Title cannot be empty.")
+        self._title = value
+
+2. Inheritance -- Our project defines a parent class ArchiveItem and child classes that extend it.
+Example:
+class ImageItem(ArchiveItem):
+    def __init__(self, title, creator, year, resolution):
+        super().__init__(title, creator, year)
+        self.resolution = resolution
+
+3. Polymorphism -- This system implements the same method differently for each item type.
+Example:
+class ArchiveItem(ABC):
+    @abstractmethod
+    def summarize(self):
+        pass
+
+class ImageItem(ArchiveItem):
+    def summarize(self):
+        return f"Image: {self.title} ({self.year})"
+
+class DocumentItem(ArchiveItem):
+    def summarize(self):
+        return f"Document: {self.title} — {self.creator}"
+
+4. Abstract Base Classes -- Foundational base classes are implemented that cannot be instantiated but enforced required mehtods.
+Example:
+from abc import ABC, abstractmethod
+
+class ArchiveItem(ABC):
+
+    @abstractmethod
+    def summarize(self):
+        pass
+
+
+## Class-by-Class Walkthrough

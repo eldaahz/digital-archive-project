@@ -1,0 +1,93 @@
+# Completeness testing - Eldaah Zelalem 
+
+Q1 - Which artist has the most artworks?
+
+def test_artist_question_1_complete(self):
+ 
+    archive = ArtArchive()
+    
+    archive.add_artwork(
+        title="Work 1", creator="Picasso", date="1920",
+        type="Painting", format="Oil on canvas"
+    )
+    archive.add_artwork(
+        title="Work 2", creator="Picasso", date="1921",
+        type="Painting", format="Oil on canvas"
+    )
+    archive.add_artwork(
+        title="Work 3", creator="Monet", date="1890",
+        type="Painting", format="Oil on canvas"
+    )
+    
+    result = archive.get_proflific_artist()
+    
+    # Verify complete and correct
+    self.assertIsNotNone(result)
+    self.assertEqual(result['creator'], "Picasso")
+    self.assertEqual(result['count'], 2)
+
+Q2 - Is file format supported?
+
+def test_supported_file_formats(self):
+    """Verify JPG, PNG, and TIFF formats are supported."""
+    archive = ArtArchive()
+    
+    # Test JPG
+    self.assertTrue(archive.validate_file_format("image.jpg"))
+    self.assertTrue(archive.validate_file_format("image.jpeg"))
+    
+    # Test PNG
+    self.assertTrue(archive.validate_file_format("image.png"))
+    
+    # Test TIFF
+    self.assertTrue(archive.validate_file_format("image.tiff"))
+    self.assertTrue(archive.validate_file_format("image.tif"))
+    
+    # Test unsupported format
+    with self.assertRaises(ValueError):
+        archive.validate_file_format("image.gif")
+
+Q3 - Complete Userworkflow 
+
+def test_complete_workflow(self):
+    """Test complete user workflow from start to finish."""
+    # Create archive with admin user
+    admin = User("admin@museum.edu", role="admin")
+    archive = ArtArchive(current_user=admin)
+    
+    # Import data from CSV
+    count = archive.import_from_csv("museum_collection.csv")
+    self.assertGreater(count, 0)
+    
+    # Add new artwork manually
+    archive.add_artwork(
+        title="New Acquisition",
+        creator="Contemporary Artist",
+        date="2024",
+        type="Digital Art",
+        format="Digital print",
+        file_format="PNG"
+    )
+    
+    # Add tags for organization
+    archive.add_tag_to_artwork("New Acquisition", "Contemporary")
+    archive.add_tag_to_artwork("New Acquisition", "Digital")
+    
+    # Answer charter questions
+    q1 = archive.answer_charter_question_1()
+    self.assertIsNotNone(q1)
+    
+    # Save complete collection
+    archive.save("complete_archive.json")
+    
+    # Load and verify
+    loaded = ArtArchive.load("complete_archive.json", current_user=admin)
+    self.assertEqual(len(loaded.artworks), count + 1)
+    
+    # Export report
+    loaded.generate_report("collection_report.txt")
+    self.assertTrue(Path("collection_report.txt").exists())
+    
+    # Export to CSV
+    loaded.export_to_csv("collection_export.csv")
+    self.assertTrue(Path("collection_export.csv").exists())

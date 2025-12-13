@@ -98,14 +98,20 @@ def export_period_report(collection, start_year, end_year, filename):
 
 #Demo
 if __name__ == "__main__":
-    from Atena_project03 import ArchiveCollection
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent))
+    
     from artwork_record import Artwork
     
-    archive = ArchiveCollection("Digital Art Archive")
-    archive.add_document(Artwork("Starry Night", "Van Gogh", 1889, "Painting"))
-    archive.add_document(Artwork("Mona Lisa", "Da Vinci", 1503, "Painting"))
+    artwork1 = Artwork("Starry Night", "Van Gogh", 1889, "Painting")
+    artwork2 = Artwork("Mona Lisa", "Da Vinci", 1503, "Painting")
     
-    save_collection(archive, "demo_archive.json")
-    data = load_collection("demo_archive.json")
-    print(f"Archive saved and loaded: {data['name']} with {len(data['documents'])} artworks")
+    print("=== Created Artworks ===")
+    print(artwork1)
+    print(artwork2)
+    
+    print("\n=== CSV Import Demo ===")
+    print("import_artworks_csv() can load artworks from CSV files")
+    print("export_artworks_csv() can save collections to CSV")
 

@@ -228,8 +228,80 @@ from abc import ABC, abstractmethod
 class ArchiveItem(ABC):
 
     @abstractmethod
+
+
     def summarize(self):
         pass
 
+# Project 
+Overview - 
 
-## Class-by-Class Walkthrough
+Managing art collections can be complex when tracking multiple artists, artworks, and locations. This system provides a structured way to store this information, answer questions about the collection, and maintain data across sessions.This document covers the three completeness tests that verify the Art Archive Management System answers all charter questions and functions correctly end-to-end.
+
+Test 1 - Which artist has the most artworks? 
+Purpose: Verify the system identitfies the most prolific artist correctly 
+Example: 
+def test_artist_question_1_complete(self):
+    archive = ArtArchive()
+    
+    # Add artworks: Picasso (2), Monet (1)
+    archive.add_artwork(title="Work 1", creator="Picasso", date="1920",
+                       type="Painting", format="Oil on canvas")
+    archive.add_artwork(title="Work 2", creator="Picasso", date="1921",
+                       type="Painting", format="Oil on canvas")
+    archive.add_artwork(title="Work 3", creator="Monet", date="1890",
+                       type="Painting", format="Oil on canvas")
+    
+    result = archive.get_proflific_artist()
+    
+    self.assertIsNotNone(result)
+    self.assertEqual(result['creator'], "Picasso")
+    self.assertEqual(result['count'], 2)
+
+Expected: Picasso identified with 2 artworks
+
+Test 2 - Is file format supported?
+Purpose: Verfiy JPG, PNG, and TIFF formats are supported and unsupported formats are rejected.
+Example: 
+def test_supported_file_formats(self):
+    archive = ArtArchive()
+    
+    # Supported formats
+    self.assertTrue(archive.validate_file_format("image.jpg"))
+    self.assertTrue(archive.validate_file_format("image.jpeg"))
+    self.assertTrue(archive.validate_file_format("image.png"))
+    self.assertTrue(archive.validate_file_format("image.tiff"))
+    self.assertTrue(archive.validate_file_format("image.tif"))
+    
+    # Unsupported format
+    with self.assertRaises(ValueError):
+        archive.validate_file_format("image.gif")
+Expected: JPG/PNG/TIFF pass; GIF raises ValueError
+
+Test 3 - Complete User Workflow 
+Purpose: Test entire system workflow from import to export
+Example: 
+def test_complete_workflow(self):
+    # Create admin user and archive
+    admin = User("admin@museum.edu", role="admin")
+    archive = ArtArchive(current_user=admin)
+    
+    # Import, add, tag, save, load, export
+    count = archive.import_from_csv("museum_collection.csv")
+    archive.add_artwork(title="New Acquisition", creator="Contemporary Artist",
+                       date="2024", type="Digital Art", format="Digital print",
+                       file_format="PNG")
+    archive.add_tag_to_artwork("New Acquisition", "Contemporary")
+    
+    archive.save("complete_archive.json")
+    loaded = ArtArchive.load("complete_archive.json", current_user=admin)
+    loaded.generate_report("collection_report.txt")
+    loaded.export_to_csv("collection_export.csv")
+    
+    # Verify
+    self.assertEqual(len(loaded.artworks), count + 1)
+    self.assertTrue(Path("collection_report.txt").exists())
+    self.assertTrue(Path("collection_export.csv").exists())
+    
+Expected: All operations succeed; data persists correctly.
+

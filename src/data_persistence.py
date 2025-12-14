@@ -14,12 +14,12 @@ def save_collection(art_archive, filename):
         "documents": []
     }
     
-    for doc in art_archive.documents:
+    for artwork in art_archive.documents:
         doc_data = {
             "type": doc.__class__.__name__,
-            "title": doc.title,
-            "creator": doc.creator,
-            "year": doc.year
+            "title": artwork._title,
+            "artist": artwork._artist,
+            "year": artwork._year
         }
         
         # Add specific attributes
@@ -76,9 +76,9 @@ def export_artworks_csv(collection, filename):
         writer = csv.writer(f)
         writer.writerow(['title', 'artist', 'year', 'type'])
         
-        for doc in collection.documents:
+        for artwork in collection.documents:
             if hasattr(doc, '_art_type'):
-                writer.writerow([doc.title, doc.creator, doc.year, doc._art_type])
+                writer.writerow([artwork._title, artwork._artist, artwork._year, artwork._art_type])
 
 def export_period_report(collection, start_year, end_year, filename):
     """Export artworks from time period to CSV."""
@@ -91,10 +91,10 @@ def export_period_report(collection, start_year, end_year, filename):
         writer = csv.writer(f)
         writer.writerow(['title', 'creator', 'year', 'type'])
         
-        for doc in collection.documents:
+        for artwork in collection.documents:
             if start_year <= doc.year <= end_year:
                 doc_type = getattr(doc, '_art_type', doc.__class__.__name__)
-                writer.writerow([doc.title, doc.creator, doc.year, doc_type])
+                writer.writerow([artwork._title, artwork._artist, artwork._year, artwork._art_type])
 
 #Demo
 if __name__ == "__main__":

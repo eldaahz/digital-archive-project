@@ -233,7 +233,7 @@ class ArchiveItem(ABC):
     def summarize(self):
         pass
 
-# Project 
+# Project 4
 Overview - 
 
 Managing art collections can be complex when tracking multiple artists, artworks, and locations. This system provides a structured way to store this information, answer questions about the collection, and maintain data across sessions.This document covers the three completeness tests that verify the Art Archive Management System answers all charter questions and functions correctly end-to-end.

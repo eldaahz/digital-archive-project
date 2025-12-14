@@ -16,23 +16,12 @@ def save_collection(art_archive, filename):
     
     for artwork in art_archive.documents:
         doc_data = {
-            "type": doc.__class__.__name__,
+            "type": artwork.__class__.__name__,
             "title": artwork._title,
             "artist": artwork._artist,
             "year": artwork._year
         }
         
-        # Add specific attributes
-        if hasattr(doc, 'pages'):
-            doc_data['pages'] = doc.pages
-        elif hasattr(doc, 'issue_number'):
-            doc_data['issue_number'] = doc.issue_number
-        elif hasattr(doc, 'recipient'):
-            doc_data['recipient'] = doc.recipient
-        elif hasattr(doc, 'scale'):
-            doc_data['scale'] = doc.scale
-        elif hasattr(doc, '_art_type'):
-            doc_data['art_type'] = doc._art_type
         
         data["documents"].append(doc_data)
     
@@ -77,7 +66,6 @@ def export_artworks_csv(collection, filename):
         writer.writerow(['title', 'artist', 'year', 'type'])
         
         for artwork in collection.documents:
-            if hasattr(doc, '_art_type'):
                 writer.writerow([artwork._title, artwork._artist, artwork._year, artwork._art_type])
 
 def export_period_report(collection, start_year, end_year, filename):
@@ -92,8 +80,7 @@ def export_period_report(collection, start_year, end_year, filename):
         writer.writerow(['title', 'creator', 'year', 'type'])
         
         for artwork in collection.documents:
-            if start_year <= doc.year <= end_year:
-                doc_type = getattr(doc, '_art_type', doc.__class__.__name__)
+            if start_year <= artwork._year <= end_year:
                 writer.writerow([artwork._title, artwork._artist, artwork._year, artwork._art_type])
 
 #Demo

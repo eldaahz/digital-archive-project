@@ -83,7 +83,7 @@ def export_period_report(collection, start_year, end_year, filename):
             if start_year <= artwork._year <= end_year:
                 writer.writerow([artwork._title, artwork._artist, artwork._year, artwork._art_type])
 
-#Demo
+# Demo 
 if __name__ == "__main__":
     import sys
     from pathlib import Path
@@ -91,14 +91,23 @@ if __name__ == "__main__":
     
     from artwork_record import Artwork
     
-    artwork1 = Artwork("Starry Night", "Van Gogh", 1889, "Painting")
-    artwork2 = Artwork("Mona Lisa", "Da Vinci", 1503, "Painting")
+    # Create test collection
+    class DemoCollection:
+        def __init__(self, name):
+            self.name = name
+            self.documents = []
+        def add_document(self, doc):
+            self.documents.append(doc)
     
-    print("=== Created Artworks ===")
-    print(artwork1)
-    print(artwork2)
+    archive = DemoCollection("Digital Art Archive")
+    archive.add_document(Artwork("Starry Night", "Van Gogh", 1889, "Painting"))
+    archive.add_document(Artwork("Mona Lisa", "Da Vinci", 1503, "Painting"))
     
-    print("\n=== CSV Import Demo ===")
-    print("import_artworks_csv() can load artworks from CSV files")
-    print("export_artworks_csv() can save collections to CSV")
+    print("=== Saving Archive ===")
+    save_collection(archive, "demo_archive.json")
+    print("Saved to demo_archive.json")
+    
+    print("\n=== Loading Archive ===")
+    data = load_collection("demo_archive.json")
+    print(f"Loaded: {data['name']} with {len(data['documents'])} artworks")
 

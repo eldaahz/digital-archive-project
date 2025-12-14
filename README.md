@@ -239,6 +239,7 @@ Overview -
 Managing art collections can be complex when tracking multiple artists, artworks, and locations. This system provides a structured way to store this information, answer questions about the collection, and maintain data across sessions.This document covers the three completeness tests that verify the Art Archive Management System answers all charter questions and functions correctly end-to-end.
 
 Test 1 - Which artist has the most artworks? 
+
 Purpose: Verify the system identitfies the most prolific artist correctly 
 Example: 
 def test_artist_question_1_complete(self):
@@ -261,6 +262,7 @@ def test_artist_question_1_complete(self):
 Expected: Picasso identified with 2 artworks
 
 Test 2 - Is file format supported?
+
 Purpose: Verfiy JPG, PNG, and TIFF formats are supported and unsupported formats are rejected.
 Example: 
 def test_supported_file_formats(self):
@@ -279,6 +281,7 @@ def test_supported_file_formats(self):
 Expected: JPG/PNG/TIFF pass; GIF raises ValueError
 
 Test 3 - Complete User Workflow 
+
 Purpose: Test entire system workflow from import to export
 Example: 
 def test_complete_workflow(self):

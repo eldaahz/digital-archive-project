@@ -1,0 +1,18 @@
+{
+  "name": "Digital Art Archive",
+  "saved_at": "2025-12-14T09:52:59.758347",
+  "documents": [
+    {
+      "type": "Artwork",
+      "title": "Starry Night",
+      "artist": "Van Gogh",
+      "year": 1889
+    },
+    {
+      "type": "Artwork",
+      "title": "Mona Lisa",
+      "artist": "Da Vinci",
+      "year": 1503
+    }
+  ]
+}

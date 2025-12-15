@@ -228,12 +228,10 @@ from abc import ABC, abstractmethod
 class ArchiveItem(ABC):
 
     @abstractmethod
+
+
     def summarize(self):
         pass
 
 
 ## Class-by-Class Walkthrough
-
-# Link to our Project 4 video:
-https://drive.google.com/file/d/1mzWi6RI7e_hlKix4sBytF5XM0Ijqq02B/view?usp=sharing
-

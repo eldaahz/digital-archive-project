@@ -1,0 +1,40 @@
+System Architecture
+art_archive/
+├── models/      # Artwork (Dublin Core), User (permissions)
+├── storage/     # JSON/CSV persistence
+├── search/      # Search engine + tag management
+└── media/       # File format validation
+Component Flow:
+User → Archive Manager → [Artwork | User | File | Search]
+       (permissions)      Models  Mgmt   Mgmt   Engine
+
+Key Design Decisions
+1. Dublin Core Metadata
+Decision: Use Dublin Core 15-element standard for artwork metadata.
+Why: Industry standard for archives; interoperable; comprehensive for art collections.
+Key Fields: title, creator, date, type, format, subject, description, rights
+
+2. File Format Support
+Decision: Support JPG, PNG, TIFF only.
+Why - 
+JPG: web standard, small files
+PNG: lossless, transparency
+TIFF: archival quality
+
+Store file paths, not actual images (efficiency).
+
+3. Tag-Based Organization
+Decision: Flexible tagging separate from Dublin Core subjects.
+Why: Users need informal grouping; supports custom organizational schemes
+
+4. Custom Error Handling
+Decision: Exception hierarchy - ValidationError, PermissionError, StorageError.
+Why: Clear error messages; maintains data integrity; different failures need different handling.
+
+Data Validation
+Dublin Core Requirements:
+
+Title, creator, date, type, format (required)
+Date: ISO format (YYYY, YYYY-MM, YYYY-MM-DD)
+Type: Controlled vocabulary (Painting, Sculpture, etc.)
+File formats: JPG/JPEG/PNG/TIFF/TIF only
